@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&duration=3000&pause=1000&color=07477C&center=true&width=1200&lines=Play+Chess+mobile+game)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&height=80&size=40&duration=3000&pause=1000&color=07477C&center=true&width=1200&lines=Play+Chess+mobile+game)](https://git.io/typing-svg)
 # Список участников:<br>
 - **Пнев Алексей - руководитель проекта, разработчик**
 - **Максим Засухин - разработчик**
