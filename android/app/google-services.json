@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "783486881115",
+    "project_id": "play-chess-accounts",
+    "storage_bucket": "play-chess-accounts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783486881115:android:13823cb03131d70e661e7e",
+        "android_client_info": {
+          "package_name": "com.example.play_chess"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783486881115-grm28u9vfp98e74jma0012po64c4r8u1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwPWYG5NzCPBq01j-8Y_EwY03Cpy8b7NU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "783486881115-grm28u9vfp98e74jma0012po64c4r8u1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
