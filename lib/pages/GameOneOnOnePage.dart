@@ -13,7 +13,7 @@ class _GaneOneOnOnePageState extends State<GaneOneOnOnePage> {
 
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    return const Scaffold(
+    return Scaffold(
       body: Text('Тут будет окно игры'),
     );
   }

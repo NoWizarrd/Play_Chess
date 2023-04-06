@@ -67,7 +67,7 @@ class _StartPageState extends State<StartPage> {
                   height: screenHeight/5,
                   child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/GameOneonOne');
+                        Navigator.pushReplacementNamed(context, '/GameModesPage');
                         // Действие при нажатии кнопки
                       },
                       style: ElevatedButton.styleFrom(
@@ -106,8 +106,7 @@ class _StartPageState extends State<StartPage> {
                                 ),),
                               ],
                             ),
-                          )
-
+                          ),
                         ],
                       )
                   ),
