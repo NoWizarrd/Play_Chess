@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 
 
@@ -103,33 +102,33 @@ class _GameModesPageState extends State<GameModesPage> {
                       ),
                     )
                 ),
-                Padding(padding: EdgeInsets.only(top: 60)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      height: screenHeight/10,
-                      width: screenHeight/10,
-                      child:
-                      ElevatedButton(
-                        onPressed: (){
-                          Navigator.pushReplacementNamed(context, '/StartPage');
-
-                        },
-                        child: SvgPicture.asset(
-                          'images/icon_for_button_go_back.svg',
-                          height: 40,
-                          color: Colors.white,),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                            shape: CircleBorder(),
-                            side: BorderSide(color: Colors.white,width: 1)
-                        ),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(right:screenWidth/15)),
-                  ],
-                )
+                // Padding(padding: EdgeInsets.only(top: 60)),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: [
+                //     SizedBox(
+                //       height: screenHeight/10,
+                //       width: screenHeight/10,
+                //       child:
+                //       ElevatedButton(
+                //         onPressed: (){
+                //           Navigator.pushReplacementNamed(context, '/StartPage');
+                //
+                //         },
+                //         child: SvgPicture.asset(
+                //           'images/icon_for_button_go_back.svg',
+                //           height: 40,
+                //           color: Colors.white,),
+                //         style: ElevatedButton.styleFrom(
+                //           backgroundColor: Colors.transparent,
+                //             shape: CircleBorder(),
+                //             side: BorderSide(color: Colors.white,width: 1)
+                //         ),
+                //       ),
+                //     ),
+                //     Padding(padding: EdgeInsets.only(right:screenWidth/15)),
+                //   ],
+                // )
               ],
             )
           ],
