@@ -5,7 +5,7 @@ import 'package:play_chess/pages/RegistrationPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:play_chess/pages/StartPage.dart';
 import 'package:play_chess/pages/GameModesPage.dart';
-
+import 'package:play_chess/pages/HistoryPage.dart';
 
 void initFireBase() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +22,8 @@ void main() {
       '/registration': (context) => const RegistrationPage(),
       '/StartPage': (context) => const StartPage(),
       '/GameOneonOne': (context) => const GaneOneOnOnePage(),
-      '/GameModesPage': (context) => const GameModesPage()
+      '/GameModesPage': (context) => const GameModesPage(),
+      'HistoryPage' : (context) => const HistoryPage(),
     },
     debugShowCheckedModeBanner: false,
   ));

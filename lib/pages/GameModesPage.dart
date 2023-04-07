@@ -32,13 +32,19 @@ class _GameModesPageState extends State<GameModesPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(padding: EdgeInsets.only(top: screenHeight/70)),
-                const Text('ВЫБОР РЕЖИМА',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 42,
-                    color: Colors.white,
-                  ),),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text('ВЫБОР РЕЖИМА',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Comfortaa',
+                        fontSize: 42,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
                 Padding(padding: EdgeInsets.only(top:screenHeight/7)),
                 SizedBox(
                   width: screenWidth,

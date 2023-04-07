@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 import 'package:play_chess/pages/GameModesPage.dart';
+import 'package:play_chess/pages/HistoryPage.dart';
 
 
 
@@ -72,7 +73,6 @@ class _StartPageState extends State<StartPage> {
                           context,
                           MaterialPageRoute(builder: (context) => GameModesPage()),
                         );
-                        // Действие при нажатии кнопки
                       },
                       style: ElevatedButton.styleFrom(
                         shadowColor: Colors.black,
@@ -194,7 +194,10 @@ class _StartPageState extends State<StartPage> {
                   height: screenHeight/5,
                   child: ElevatedButton(
                       onPressed: () {
-                        // Действие при нажатии кнопки
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HistoryPage()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 5,
