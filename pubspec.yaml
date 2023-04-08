@@ -73,6 +73,8 @@ flutter:
     - images/background_board.svg
     - images/icon_for_button_go_back.svg
     - images/background_board.png
+    - images/Player.svg
+    - images/Icon.svg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -50,6 +50,11 @@ class _GameModesPageState extends State<GameModesPage> {
                   width: screenWidth,
                   height: screenHeight/7,
                   child: ElevatedButton(onPressed: (){},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromRGBO(0, 0, 0, 0.5),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
+                      side: BorderSide(color: Color.fromRGBO(194, 184, 146, 1.0),width: 1)
+                    ),
                     child:
                     const Text('ОНЛАЙН',
                       textAlign: TextAlign.center,
@@ -58,11 +63,6 @@ class _GameModesPageState extends State<GameModesPage> {
                         fontSize: 42,
                         color: Colors.white,
                       ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromRGBO(0, 0, 0, 0.5),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
-                      side: BorderSide(color: Color.fromRGBO(194, 184, 146, 1.0),width: 1)
                     ),
                   )
                 ),
