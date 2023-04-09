@@ -76,7 +76,13 @@ flutter:
     - images/Player.svg
     - images/Icon.svg
     - images/VS_for_history.svg
-
+    - images/left_arrow.svg
+    - images/restart.svg
+    - images/right arrow.svg
+    - images/settings.svg
+    - images/sound_off.svg
+    - images/sound_on.svg
+    - images/flag.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
