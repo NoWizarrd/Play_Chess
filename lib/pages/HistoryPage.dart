@@ -13,7 +13,7 @@ class HistoryPage extends StatefulWidget {
 class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
-    List <List<String>> list = [['Победа','01:10:31','Засухерка'],['Поражение','01:10:31','Zasuherka'],['Победа','01:10:31','Засухерка'],['Поражение','01:10:31','Zasuherka'],['Победа','01:10:31','Засухерка'],['Поражение','01:10:31','Zasuherka'],['Победа','01:10:31','Засухерка'],['Поражение','01:10:31','Zasuherka'],['Победа','01:10:31','Засухерка'],['Поражение','01:10:31','Zasuherka'],['Победа','01:10:31','Засухерка'],['Поражение','01:10:31','Zasuherka'],];
+    List <List<String>> list = [['Победа','01:10:31','Засухерка','Wizard'],['Победа','01:10:31','Wizard','Засухерка'],['Победа','01:10:31','Засухерка','Wizard'],['Победа','01:10:31','Засухерка','Wizard'],['Победа','01:10:31','Wizard','Засухерка'],['Победа','01:10:31','Засухерка','Wizard'],['Победа','01:10:31','Засухерка','Wizard'],['Победа','01:10:31','Wizard','Засухерка'],['Победа','01:10:31','Засухерка','Wizard'],['Победа','01:10:31','Засухерка','Wizard'],['Победа','01:10:31','Wizard','Засухерка'],['Победа','01:10:31','Засухерка','Wizard'],];
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -66,60 +66,77 @@ class _HistoryPageState extends State<HistoryPage> {
                           borderRadius: BorderRadius.circular(0),
                         ),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(padding: EdgeInsets.only(top: screenHeight/100)),
+                            // TODO [Результат, время, ник белого игра, ник чёрного игрока]
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                SvgPicture.asset(
-                                  'images/Player.svg',
-                                  height: 30,
-                                  color: Colors.white,
-                                ),
-                                Text(
-                                    ': ${list[index][2]}',
-                                    style: TextStyle(
-                                      fontFamily: 'Comfortaa',
-                                      fontSize: 25,
-                                      color: Colors.white,
-                                    )
-                                ),
-                                Padding(padding: EdgeInsets.only(right: screenWidth/20))
-                              ],
-                            ),
-                            Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                            Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  list[index][0],
-                                  textAlign:
-                                  TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: 'Comfortaa',
-                                    fontSize: 38,
+                                // SvgPicture.asset(
+                                //   'images/Player.svg',
+                                //   height: 30,
+                                //   color: Colors.white,
+                                // ),
+                                Container(
+                                  alignment: Alignment.topRight, //определиться с выравниванием
+                                  width: screenWidth * 0.43,
+                                  child: Text(
+                                      '${list[index][2]}',
+                                      style: TextStyle(
+                                        fontFamily: 'Comfortaa',
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      )
+                                  ),
+                                ),
+                                Container(
+                                  alignment: Alignment.topCenter,
+                                  width: screenWidth * 0.1,
+                                  child: SvgPicture.asset(
+                                    'images/VS_for_history.svg',
+                                    height: 30,
                                     color: Colors.white,
                                   ),
+                                ),
+                                Container(
+                                  alignment: Alignment.topLeft, //определиться с выравниванием
+                                  width: screenWidth * 0.43,
+                                  child: Text(
+                                      ' ${list[index][3]}',
+                                      style:TextStyle(
+                                        fontFamily: 'Comfortaa',
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      )
+                                  ),
+                                ),
 
-                                )
+                                //Padding(padding: EdgeInsets.only(right: screenWidth/20))
                               ],
                             ),
                             Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  list[index][1],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: 'Comfortaa',
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                  ),
-                                )
-                              ],
+                            Text(
+                              list[index][0],
+                              textAlign:
+                              TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Comfortaa',
+                                fontSize: 38,
+                                color: Colors.white,
+                              ),
                             ),
+                            Padding(padding: EdgeInsets.only(top: screenHeight/100)),
+                            Text(
+                              list[index][1],
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Comfortaa',
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
+                            )
                           ],
                         ),
                       )

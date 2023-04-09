@@ -75,6 +75,7 @@ flutter:
     - images/background_board.png
     - images/Player.svg
     - images/Icon.svg
+    - images/VS_for_history.svg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

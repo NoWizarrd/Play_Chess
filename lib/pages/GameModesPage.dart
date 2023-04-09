@@ -29,21 +29,17 @@ class _GameModesPageState extends State<GameModesPage> {
               height: screenHeight,
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(padding: EdgeInsets.only(top: screenHeight/70)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text('ВЫБОР РЕЖИМА',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Comfortaa',
-                        fontSize: 42,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+                Text('ВЫБОР РЕЖИМА',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Comfortaa',
+                    fontSize: 42,
+                    color: Colors.white,
+                  ),
                 ),
                 Padding(padding: EdgeInsets.only(top:screenHeight/7)),
                 SizedBox(
