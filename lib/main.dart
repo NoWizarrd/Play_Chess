@@ -17,7 +17,7 @@ void main() {
       '/StartPage': (context) => const StartPage(),
       '/GameOneonOne': (context) => const GaneOneOnOnePage(),
       '/GameModesPage': (context) => const GameModesPage(),
-      'HistoryPage' : (context) => const HistoryPage(),
+      '/HistoryPage' : (context) => const HistoryPage(),
     },
     debugShowCheckedModeBanner: false,
   ));
