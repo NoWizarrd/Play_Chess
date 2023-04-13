@@ -3,26 +3,24 @@ import 'package:play_chess/pages/InitialPage.dart';
 import 'package:play_chess/pages/GameOneOnOnePage.dart';
 import 'package:play_chess/pages/ProfilePage.dart';
 import 'package:play_chess/pages/RegistrationPage.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:play_chess/pages/StartPage.dart';
+import 'package:play_chess/pages/GameModesPage.dart';
+import 'package:play_chess/pages/HistoryPage.dart';
 
-
-void initFireBase() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-}
 void main() {
-  initFireBase();
   runApp(MaterialApp(
     title: 'Play Chess',
-    initialRoute: '/startPage',
+    initialRoute: '/StartPage',
     routes: {
       '/': (context) => const StartPage(),
       '/initialization': (context) => const InitialPage(),
       '/registration': (context) => const RegistrationPage(),
-      '/startPage': (context) => const StartPage(),
       '/GameOneonOne': (context) => const GaneOneOnOnePage(),
       '/ProfilePage': (context) => const ProfilePage()
+      '/StartPage': (context) => const StartPage(),
+      '/GameModesPage': (context) => const GameModesPage(),
+      '/HistoryPage' : (context) => const HistoryPage(),
+
     },
     debugShowCheckedModeBanner: false,
   ));
