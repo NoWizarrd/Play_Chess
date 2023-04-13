@@ -70,6 +70,7 @@ flutter:
     - images/Конь.svg
     - images/Башня.svg
     - images/Слон.svg
+    - images/avatar.jpg
     - images/background_board.svg
     - images/icon_for_button_go_back.svg
     - images/background_board.png
@@ -83,6 +84,7 @@ flutter:
     - images/sound_off.svg
     - images/sound_on.svg
     - images/flag.svg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

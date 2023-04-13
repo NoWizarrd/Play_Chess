@@ -23,31 +23,6 @@ class _StartPageState extends State<StartPage> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
-      // appBar: AppBar(
-      //   toolbarHeight: 0,
-      //   backgroundColor: Colors.transparent,
-      //     elevation: 0,
-      //   actions: [
-      //     ElevatedButton(
-      //       onPressed: () {},
-      //       style: ButtonStyle(
-      //         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-      //           RoundedRectangleBorder(
-      //             borderRadius: BorderRadius.circular(90.0),
-      //           ),
-      //         ),
-      //       ), //ElevatedButton.styleFrom(
-      //       //   backgroundColor: Colors.transparent,
-      //       //   elevation: 0,
-      //       //   shape: const CircleBorder()
-      //       child: const Icon(
-      //           Icons.person,
-      //           color: Colors.black,
-      //           size: 50,),)
-      //   ],
-      // ),
-
-
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -132,6 +107,7 @@ class _StartPageState extends State<StartPage> {
                   height: screenHeight/5,
                   child: ElevatedButton(
                       onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/ProfilePage');
                         // Действие при нажатии кнопки
                       },
                       style: ElevatedButton.styleFrom(
