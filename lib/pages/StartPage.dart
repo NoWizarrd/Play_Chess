@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:play_chess/pages/GameModesPage.dart';
+import 'package:play_chess/pages/HistoryPage.dart';
+
 
 
 
@@ -53,7 +56,7 @@ class _StartPageState extends State<StartPage> {
               children: <Widget>[
                 Positioned.fill(child:
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: [Color.fromRGBO(0, 0, 0, 1.0), Color.fromRGBO(106, 74, 25, 1.0)],
                         begin: Alignment.topRight,
@@ -67,8 +70,10 @@ class _StartPageState extends State<StartPage> {
                   height: screenHeight/5,
                   child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/GameOneonOne');
-                        // Действие при нажатии кнопки
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => GameModesPage()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         shadowColor: Colors.black,
@@ -91,7 +96,7 @@ class _StartPageState extends State<StartPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                                Text('Игра',
+                                const Text('Игра',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontFamily: 'Comfortaa',
@@ -99,15 +104,14 @@ class _StartPageState extends State<StartPage> {
                                     color: Colors.white,
                                   ),),
                                 Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                                Text('Сыграть партию', style: TextStyle(
+                                const Text('Сыграть партию', style: TextStyle(
                                   fontFamily: 'Comfortaa',
                                   fontSize: 18,
                                   color: Colors.white,
                                 ),),
                               ],
                             ),
-                          )
-
+                          ),
                         ],
                       )
                   ),
@@ -118,7 +122,7 @@ class _StartPageState extends State<StartPage> {
               children: <Widget>[
                 Positioned.fill(child:
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Color.fromRGBO(194, 184, 146, 1.0)
                   ),
                 )
@@ -150,7 +154,7 @@ class _StartPageState extends State<StartPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                                Text('Профиль',
+                                const Text('Профиль',
                                   //textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontFamily: 'Comfortaa',
@@ -158,7 +162,7 @@ class _StartPageState extends State<StartPage> {
                                     color: Colors.white,
                                   ),),
                                 Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                                Text('Зайти в свой профиль', style: TextStyle(
+                                const Text('Зайти в свой профиль', style: TextStyle(
                                   fontFamily: 'Comfortaa',
                                   fontSize: 18,
                                   color: Colors.white,
@@ -177,7 +181,7 @@ class _StartPageState extends State<StartPage> {
               children: <Widget>[
                 Positioned.fill(child:
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: [Color.fromRGBO(0, 0, 0, 1.0), Color.fromRGBO(106, 74, 25, 1.0)],
                         begin: Alignment.topRight,
@@ -191,7 +195,10 @@ class _StartPageState extends State<StartPage> {
                   height: screenHeight/5,
                   child: ElevatedButton(
                       onPressed: () {
-                        // Действие при нажатии кнопки
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HistoryPage()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 5,
@@ -213,7 +220,7 @@ class _StartPageState extends State<StartPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                                Text('История',
+                                const Text('История',
                                   //textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontFamily: 'Comfortaa',
@@ -221,7 +228,7 @@ class _StartPageState extends State<StartPage> {
                                     color: Colors.white,
                                   ),),
                                 Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                                Text('История игр', style: TextStyle(
+                                const Text('История игр', style: TextStyle(
                                   fontFamily: 'Comfortaa',
                                   fontSize: 18,
                                   color: Colors.white,
@@ -240,7 +247,7 @@ class _StartPageState extends State<StartPage> {
               children: <Widget>[
                 Positioned.fill(child:
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Color.fromRGBO(194, 184, 146, 1.0)
                   ),
                 )
@@ -272,7 +279,7 @@ class _StartPageState extends State<StartPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                                Text('Настройки',
+                                const Text('Настройки',
                                   //textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontFamily: 'Comfortaa',
@@ -280,14 +287,21 @@ class _StartPageState extends State<StartPage> {
                                     color: Colors.white,
                                   ),),
                                 Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                                Text('Настройки игры', style: TextStyle(
+                                const Text(
+                                  'Настройки игры', style: TextStyle(
                                   fontFamily: 'Comfortaa',
                                   fontSize: 18,
                                   color: Colors.white,
                                 ),),
+                                // ElevatedButton(onPressed: () {
+                                //   Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(builder: (context) => InitialPage()),
+                                //   );
+                                // }, child: Text('Временная кнопка'))
                               ],
                             ),
-                          )
+                          ),
 
                         ],
                       )
@@ -300,7 +314,7 @@ class _StartPageState extends State<StartPage> {
               children: <Widget>[
                 Positioned.fill(child:
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: [Color.fromRGBO(0, 0, 0, 1.0), Color.fromRGBO(106, 74, 25, 1.0)],
                         begin: Alignment.topRight,
@@ -336,7 +350,7 @@ class _StartPageState extends State<StartPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                                Text('Выйти',
+                                const Text('Выйти',
                                   //textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontFamily: 'Comfortaa',
@@ -344,7 +358,7 @@ class _StartPageState extends State<StartPage> {
                                     color: Colors.white,
                                   ),),
                                 Padding(padding: EdgeInsets.only(top: screenHeight/100)),
-                                Text('Выйти из игры', style: TextStyle(
+                                const Text('Выйти из игры', style: TextStyle(
                                   fontFamily: 'Comfortaa',
                                   fontSize: 18,
                                   color: Colors.white,

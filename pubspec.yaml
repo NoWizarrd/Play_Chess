@@ -31,7 +31,7 @@ dependencies:
   cloud_firestore:
   firebase_core:
   provider:
-  flutter_svg:
+  flutter_svg: #Для вставки SVG элементов
   firebase_auth:
   flutter:
     sdk: flutter
@@ -70,7 +70,19 @@ flutter:
     - images/Конь.svg
     - images/Башня.svg
     - images/Слон.svg
-
+    - images/background_board.svg
+    - images/icon_for_button_go_back.svg
+    - images/background_board.png
+    - images/Player.svg
+    - images/Icon.svg
+    - images/VS_for_history.svg
+    - images/left_arrow.svg
+    - images/restart.svg
+    - images/right arrow.svg
+    - images/settings.svg
+    - images/sound_off.svg
+    - images/sound_on.svg
+    - images/flag.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
