@@ -70,6 +70,7 @@ flutter:
     - images/Конь.svg
     - images/Башня.svg
     - images/Слон.svg
+    - images/avatar.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
