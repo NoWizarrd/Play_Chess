@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 import 'package:play_chess/pages/GameModesPage.dart';
 import 'package:play_chess/pages/HistoryPage.dart';
+import 'package:play_chess/pages/SettingsPage.dart';
 
 
 
@@ -233,6 +234,10 @@ class _StartPageState extends State<StartPage> {
                   height: screenHeight/5,
                   child: ElevatedButton(
                       onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SettingsPage()),
+                        );
                         // Действие при нажатии кнопки
                       },
                       style: ElevatedButton.styleFrom(
@@ -304,6 +309,8 @@ class _StartPageState extends State<StartPage> {
                   height: screenHeight/5,
                   child: ElevatedButton(
                       onPressed: () {
+                        // TODO Не знаю точно, но где-то читал, что на IOS может не срабоать
+                        SystemChannels.platform.invokeMethod('SystemNavigator.pop');
                         // Действие при нажатии кнопки
                       },
                       style: ElevatedButton.styleFrom(
