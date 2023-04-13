@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfilePage extends StatefulWidget{
   const ProfilePage({Key? key}) : super(key: key);
@@ -26,43 +25,109 @@ class _ProfilePageState extends State<ProfilePage> {
                 color: Color.fromRGBO(48, 48, 48, 1.0),
           ),
           child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-              Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 70,
-                    backgroundImage: AssetImage('images/avatar.jpg'),
-
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 16),
+              CircleAvatar(
+                radius: 100,
+                backgroundImage: AssetImage('images/avatar.jpg'),
+              ),
+              SizedBox(height: 16),
+              Text(
+                'Никнейм',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                    fontFamily: 'Roboto'
                 ),
-            ]
-            ),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              ),
+              SizedBox(height: 8),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                    'Изменить профиль',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontFamily: 'roboto',
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromRGBO(99, 99, 99, 1),
+                  shadowColor: Colors.black,
+                  elevation: 6,
+                ),
+              ),
+              SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text('Avatar - Nickname here', style: TextStyle(color: Colors.black)),
-                ]
-            ),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Raiting: 1200 elo', style: TextStyle(color: Colors.black)),
-                ]
-            ),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Количество игр, процент побед', style: TextStyle(color: Colors.black)),
-                ]
-            ),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Кнопка назад', style: TextStyle(color: Colors.black)),
-                ])
-          ],
-        ),
+                  Column(
+                    children: [
+                      Text(
+                        'Рейтинг',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontFamily: 'roboto'
+                        ),),
+                      Text(
+                        '1200',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontFamily: 'Roboto'
+                        ),),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                          'Количество игр',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontFamily: 'Roboto'
+                        ),),
+                      Text(
+                          '10 (60%)',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontFamily: 'Roboto'
+                        ),),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 32),
+              Expanded(
+                child: Align(
+
+                  alignment: Alignment.bottomCenter,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                        'На главный экран',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                        fontFamily: 'Roboto'
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(vertical: 16),
+                      minimumSize: Size(double.infinity, 0),
+                      backgroundColor: Color.fromRGBO(99, 99, 99, 1),
+                      shadowColor: Colors.black,
+                      elevation: 6,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
