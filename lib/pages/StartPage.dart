@@ -7,7 +7,7 @@ import 'package:play_chess/pages/SettingsPage.dart';
 
 
 
-
+//
 class StartPage extends StatefulWidget {
   const StartPage({Key? key}) : super(key: key);
 
