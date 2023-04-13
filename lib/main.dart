@@ -16,7 +16,7 @@ void main() {
       '/initialization': (context) => const InitialPage(),
       '/registration': (context) => const RegistrationPage(),
       '/GameOneonOne': (context) => const GaneOneOnOnePage(),
-      '/ProfilePage': (context) => const ProfilePage()
+      '/ProfilePage': (context) => const ProfilePage(),
       '/StartPage': (context) => const StartPage(),
       '/GameModesPage': (context) => const GameModesPage(),
       '/HistoryPage' : (context) => const HistoryPage(),
