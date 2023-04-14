@@ -60,7 +60,7 @@ class _StartPageState extends State<StartPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(right: screenWidth/100)),
                           SvgPicture.asset(
-                            'images/Дамка.svg',
+                            'images/ФерзьЧ.svg',
                             height: 100,
                             color: Colors.white,
                           ),
@@ -119,7 +119,7 @@ class _StartPageState extends State<StartPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(right: screenWidth/100)),
                           SvgPicture.asset(
-                            'images/Лев.svg',
+                            'images/КорольЧ.svg',
                             height: 100,
                             color: Colors.white,
                           ),
@@ -185,7 +185,7 @@ class _StartPageState extends State<StartPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(right: screenWidth/100)),
                           SvgPicture.asset(
-                            'images/Конь.svg',
+                            'images/КоньЧ.svg',
                             height: 100,
                             color: Colors.white,
                           ),
@@ -244,7 +244,7 @@ class _StartPageState extends State<StartPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(right: screenWidth/100)),
                           SvgPicture.asset(
-                            'images/Башня.svg',
+                            'images/ЛадьяЧ.svg',
                             height: 100,
                             color: Colors.white,
                           ),
@@ -315,7 +315,7 @@ class _StartPageState extends State<StartPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(right: screenWidth/100)),
                           SvgPicture.asset(
-                            'images/Слон.svg',
+                            'images/СлонЧ.svg',
                             height: 100,
                             color: Colors.white,
                           ),

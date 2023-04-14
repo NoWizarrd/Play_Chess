@@ -56,7 +56,7 @@ class _GaneOneOnOnePageState extends State<GaneOneOnOnePage> {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: 50,
-              color: Colors.blueGrey,
+              color: Color.fromRGBO(194, 184, 146, 1),
               child: Center(
                 child: TimerWidget(playerName: 'Wizard', initialTime: 120,),
               ),
@@ -67,7 +67,7 @@ class _GaneOneOnOnePageState extends State<GaneOneOnOnePage> {
             alignment: Alignment.topCenter,
             child: Container(
               height: 50,
-              color: Colors.blueGrey,
+              color: Color.fromRGBO(194, 184, 146, 1),
               child: Center(
                 child: TimerWidget(playerName: 'Zasuherka', initialTime: 120,),
               ),
