@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:play_chess/pages/GameOneOnOnePage.dart';
 
 
 class GameModesPage extends StatefulWidget {
@@ -19,6 +19,11 @@ class _GameModesPageState extends State<GameModesPage> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+
+    void _goToLocalGame(BuildContext context) {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => GaneOneOnOnePage()));
+    }
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
@@ -66,7 +71,7 @@ class _GameModesPageState extends State<GameModesPage> {
                 SizedBox(
                     width: screenWidth,
                     height: screenHeight/7,
-                    child: ElevatedButton(onPressed: (){},
+                    child: ElevatedButton(onPressed: () => _goToLocalGame(context),
                       child:
                       Text('ЛОКАЛЬНО',
                         textAlign: TextAlign.center,
