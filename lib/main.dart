@@ -6,6 +6,7 @@ import 'package:play_chess/pages/RegistrationPage.dart';
 import 'package:play_chess/pages/StartPage.dart';
 import 'package:play_chess/pages/GameModesPage.dart';
 import 'package:play_chess/pages/HistoryPage.dart';
+import 'package:play_chess/pages/SettingsPage.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -20,6 +21,7 @@ void main() {
       '/StartPage': (context) => const StartPage(),
       '/GameModesPage': (context) => const GameModesPage(),
       '/HistoryPage' : (context) => const HistoryPage(),
+      '/SettingsPage' : (context) => const SettingsPage(),
 
     },
     debugShowCheckedModeBanner: false,
