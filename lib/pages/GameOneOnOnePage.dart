@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:play_chess/components/Board.dart';
+import 'package:play_chess/components/InGameModal.dart';
+import 'package:play_chess/components/TimerWidget.dart';
 
 class GaneOneOnOnePage extends StatefulWidget {
   const GaneOneOnOnePage({Key? key}) : super(key: key);
@@ -10,44 +13,68 @@ class GaneOneOnOnePage extends StatefulWidget {
 
 
 class _GaneOneOnOnePageState extends State<GaneOneOnOnePage> {
-  List<String> _chessboard = List.generate(64, (index) => '');
+
+  void _showInGameModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return InGameModal();
+      },
+    );
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Шахматная доска'),
-      ),
-      body: Center(
-        child: GridView.builder(
-          shrinkWrap: true,
-          itemCount: _chessboard.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 8,
-            childAspectRatio: 1,
-            crossAxisSpacing: 0,
-            mainAxisSpacing: 0,
+        title: Text('Шахматы'),
+        backgroundColor: Color.fromRGBO(106, 74, 25, 1.0),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              _showInGameModal(context);
+            }
           ),
-          itemBuilder: (BuildContext context, int index) {
-            final row = index ~/ 8;
-            final col = index % 8;
-            final color = (row + col) % 2 == 0 ? Color.fromRGBO(106, 74, 25, 1) : Color.fromRGBO(194, 184, 146, 1);
-            return Container(
-              color: color,
-              child: Center(
-                child: Text(
-                  '${String.fromCharCode(col + 65)}${8 - row}',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            );
-          },
-        ),
+        ],
       ),
+      body: Stack(
+        children: [
+          // Доска с шахматами
+          Positioned(
+            left: 0,
+            top: 0,
+            right: 0,
+            bottom: 0, // высота таймера игрока + небольшой отступ
+            child: Board(),
+          ),
+          // Таймер игрока
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 50,
+              color: Colors.blueGrey,
+              child: Center(
+                child: TimerWidget(playerName: 'Wizard', initialTime: 120,),
+              ),
+            ),
+          ),
+          // Таймер соперника
+          Align(
+            alignment: Alignment.topCenter,
+            child: Container(
+              height: 50,
+              color: Colors.blueGrey,
+              child: Center(
+                child: TimerWidget(playerName: 'Zasuherka', initialTime: 120,),
+              ),
+            ),
+          ),
+        ],
+      )
     );
   }
 }
