@@ -23,12 +23,6 @@ class King extends Piece{
   @override
   List rule() {
     List keys = [];
-    int min_line_position = (position/8).floor();
-    int max_line_position = min_line_position + 7;
-    if ((position != min_line_position) && (max_line_position != position))
-      {
-
-      }
     if ((position - 1) % 8 != 0)
     {
       keys.add(position - 1);
@@ -60,6 +54,7 @@ class Queen extends Piece
   @override
   Color color = Colors.black;
   Queen(this.name, this.position, this.color);
+  @override
   List rule()
   {
     List keys = [];

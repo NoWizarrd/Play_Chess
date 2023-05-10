@@ -63,7 +63,7 @@ class _StartPageState extends State<StartPage> {
                           SvgPicture.asset(
                             'images/Ферзь.svg',
                             height: 100,
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                           ),
                           SizedBox(
                             //width: 200,
@@ -122,7 +122,7 @@ class _StartPageState extends State<StartPage> {
                           SvgPicture.asset(
                             'images/Король.svg',
                             height: 100,
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                           ),
                           SizedBox(
                             //width: 200,
@@ -188,7 +188,7 @@ class _StartPageState extends State<StartPage> {
                           SvgPicture.asset(
                             'images/Конь.svg',
                             height: 100,
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                           ),
                           SizedBox(
                             //width: 200,
@@ -251,7 +251,7 @@ class _StartPageState extends State<StartPage> {
                           SvgPicture.asset(
                             'images/Ладья.svg',
                             height: 100,
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                           ),
                           SizedBox(
                             //width: 200,
@@ -324,7 +324,7 @@ class _StartPageState extends State<StartPage> {
                           SvgPicture.asset(
                             'images/Слон.svg',
                             height: 100,
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                           ),
                           SizedBox(
                             //width: 200,
