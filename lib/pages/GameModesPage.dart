@@ -18,7 +18,6 @@ class _GameModesPageState extends State<GameModesPage> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
     void _goToLocalGame(BuildContext context) {
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => GaneOneOnOnePage()));
