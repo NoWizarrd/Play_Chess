@@ -656,14 +656,14 @@ class Pawn extends Piece
     keys.removeWhere((element) => element > 64);
     for (Piece piece in listPieces)
       {
-        if (piece.position == position + 7 * coefficient)
+        if ((piece.position == position + 7 * coefficient) && ((color != Colors.white) || (position != 8) && ((color != Colors.black) || (position != 57))))
         {
           if (piece.color != color)
           {
             keys.add(piece.position);
           }
         }
-        if (piece.position == position + 9 * coefficient)
+        if ((piece.position == position + 9 * coefficient) && ((color != Colors.white) || (position != 17) && ((color != Colors.black) || (position != 58))))
         {
           if (piece.color != color)
           {
@@ -672,10 +672,12 @@ class Pawn extends Piece
         }
         if (piece.position == position + 8 * coefficient)
         {
-          if (piece.color != color)
-          {
-            keys.removeWhere((element) => element == piece.position);
-          }
+          keys.removeWhere((element) => element == piece.position);
+          keys.removeWhere((element) => element == piece.position + 8 * coefficient);
+        }
+        if (piece.position == position + 16 * coefficient)
+        {
+          keys.removeWhere((element) => element == piece.position);
         }
       }
     return keys;

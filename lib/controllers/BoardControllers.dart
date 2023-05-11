@@ -48,6 +48,7 @@ class Board
       }
       if (nowPiece != positions.whatPiece(key)) {
         nowPiece = positions.whatPiece(key);
+        colors1[nowPiece.position - 1] = Colors.blue;
       }
     }
   }

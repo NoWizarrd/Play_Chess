@@ -4,16 +4,16 @@ import 'package:play_chess/models/piece/Pieces.dart';
 
 class Position
 {
-  List <Piece> pieces = [Rook('Чёрная ладья', 8, Colors.black), Knight('Чёрный конь', 7, Colors.black),Bishop('Чёрный слон', 6, Colors.black),
-    King('Чёрный Король', 5, Colors.black), Queen('Чёрный Ферзь', 4, Colors.black),Knight('Чёрный конь', 2, Colors.black),
-    Bishop('Чёрный слон', 3, Colors.black), Rook('Чёрная ладья', 1, Colors.black), Pawn('Белая пешка', 9, Colors.black),
-    Pawn('Белая пешка', 10, Colors.black), Pawn('Белая пешка', 11, Colors.black), Pawn('Белая пешка', 12, Colors.black), Pawn('Белая пешка', 13, Colors.black),
-    Pawn('Чёрная пешка', 14, Colors.black), Pawn('Белая пешка', 15, Colors.black), Pawn('Белая пешка', 16, Colors.black),
-    Rook('Белая ладья', 64, Colors.white), Knight('Белый конь', 63, Colors.white),Bishop('Белый слон', 62, Colors.white),
-    King('Белый Король', 61, Colors.white), Queen('Белый Ферзь', 60, Colors.white),Knight('Белый конь', 58, Colors.white),
-    Bishop('Белый слон', 59, Colors.white), Rook('Белая ладья', 57, Colors.white), Pawn('Белая пешка', 49, Colors.white),
-    Pawn('Белая пешка', 56, Colors.white), Pawn('Белая пешка', 55, Colors.white), Pawn('Белая пешка', 54, Colors.white), Pawn('Белая пешка', 53, Colors.white),
-    Pawn('Белая пешка', 52, Colors.white), Pawn('Белая пешка', 51, Colors.white), Pawn('Белая пешка', 50, Colors.white),
+  List <Piece> pieces = [Rook('Ладья', 8, Colors.black), Knight('Конь', 7, Colors.black),Bishop('Слон', 6, Colors.black),
+    King('Король', 5, Colors.black), Queen('Ферзь', 4, Colors.black),Knight('Конь', 2, Colors.black),
+    Bishop('Слон', 3, Colors.black), Rook('Ладья', 1, Colors.black), Pawn('Пешка', 9, Colors.black),
+    Pawn('Пешка', 10, Colors.black), Pawn('Пешка', 11, Colors.black), Pawn('Пешка', 12, Colors.black), Pawn('Пешка', 13, Colors.black),
+    Pawn('Пешка', 14, Colors.black), Pawn('Пешка', 15, Colors.black), Pawn('Пешка', 16, Colors.black),
+    Rook('Ладья', 64, Colors.white), Knight('Конь', 63, Colors.white),Bishop('Слон', 62, Colors.white),
+    King('Король', 61, Colors.white), Queen('Ферзь', 60, Colors.white),Knight('Конь', 58, Colors.white),
+    Bishop('Слон', 59, Colors.white), Rook('Ладья', 57, Colors.white), Pawn('Пешка', 49, Colors.white),
+    Pawn('Пешка', 56, Colors.white), Pawn('Пешка', 55, Colors.white), Pawn('Пешка', 54, Colors.white), Pawn('Пешка', 53, Colors.white),
+    Pawn('Пешка', 52, Colors.white), Pawn('Пешка', 51, Colors.white), Pawn('Пешка', 50, Colors.white),
   ];
   List ruleFigure(int key)
   {
@@ -53,12 +53,32 @@ class Position
   }
   void newPosition(Piece piece, int key)
   {
+    Piece newQueen = Queen('null', 555, Colors.white);
+    Piece pieceDelForNewQueen = King('null', 555, Colors.white);
+    Piece pieceForDel = King('null', 555, Colors.white);
     for (Piece element in pieces)
       {
+        if (element.position == key)
+          {
+            pieceForDel = element;
+          }
         if (piece == element)
           {
             element.position = key;
           }
+        if ((piece.name == 'Пешка') && ((piece.position < 8) || (piece.position > 57)))
+          {
+            pieceDelForNewQueen = piece;
+            newQueen = Queen('Ферзь', piece.position, piece.color);
+          }
+      }
+    pieces.removeWhere((element) => element == pieceForDel);
+    pieces.removeWhere((element) => element == pieceDelForNewQueen);
+    if (newQueen.position != 555)
+      {
+        //pieces.removeWhere((element) => element == Pawn('Пешка', newQueen.position, newQueen.color));
+        //print(pieces.length);
+        pieces.add(newQueen);
       }
   }
   SvgPicture nullImage(){
