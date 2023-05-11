@@ -76,8 +76,6 @@ class Position
     pieces.removeWhere((element) => element == pieceDelForNewQueen);
     if (newQueen.position != 555)
       {
-        //pieces.removeWhere((element) => element == Pawn('Пешка', newQueen.position, newQueen.color));
-        //print(pieces.length);
         pieces.add(newQueen);
       }
   }
