@@ -51,33 +51,57 @@ class Position
     );
 
   }
-  void newPosition(Piece piece, int key)
+  void newPosition(Piece piece, int key, List childImages)
   {
     Piece newQueen = Queen('null', 555, Colors.white);
     Piece pieceDelForNewQueen = King('null', 555, Colors.white);
     Piece pieceForDel = King('null', 555, Colors.white);
+
+    if ((piece.name == 'Пешка') && ((piece.position < 8) || (piece.position > 57)))
+    {
+      pieceDelForNewQueen = piece;
+      newQueen = Queen('Ферзь', piece.position, piece.color);
+    }
+    pieces.removeWhere((element) => element == pieceDelForNewQueen);
+    if (newQueen.position != 555)
+    {
+      pieces.add(newQueen);
+    }
+
     for (Piece element in pieces)
       {
+        if (element.name == 'Пешка гулящая')
+          {
+            if (((element.position == key - 8) && (element.color == Colors.white)) || ((element.position == key + 8) && (element.color == Colors.black)))
+              {
+                pieceForDel = element;
+              }
+            else
+              {
+                element.name = 'Пешка';
+              }
+          }
         if (element.position == key)
           {
             pieceForDel = element;
           }
-        if (piece == element)
-          {
-            element.position = key;
-          }
-        if ((piece.name == 'Пешка') && ((piece.position < 8) || (piece.position > 57)))
-          {
-            pieceDelForNewQueen = piece;
-            newQueen = Queen('Ферзь', piece.position, piece.color);
-          }
+
       }
+    if (piece.name == 'Пешка гулящая')
+    {
+      piece.name = 'Пешка';
+    }
+    if ((piece.name == 'Пешка') && (((piece.position) - key).abs() == 16))
+    {
+      piece.name = 'Пешка гулящая';
+    }
+    if (pieceForDel.name == 'Пешка гулящая')
+    {
+      childImages[pieceForDel.position - 1] = nullImage();
+    }
+    piece.position = key;
     pieces.removeWhere((element) => element == pieceForDel);
-    pieces.removeWhere((element) => element == pieceDelForNewQueen);
-    if (newQueen.position != 555)
-      {
-        pieces.add(newQueen);
-      }
+
   }
   SvgPicture nullImage(){
     return SvgPicture.asset(

@@ -651,11 +651,22 @@ class Pawn extends Piece
         coefficient = 1;
       }
     keys.add(position + 8 * coefficient);
-    keys.add(position + 16 * coefficient);
+    if (((position > 8) && (position < 17)) || ((position > 48) && (position < 57)))
+      {
+        keys.add(position + 16 * coefficient);
+      }
     keys.removeWhere((element) => element < 1);
     keys.removeWhere((element) => element > 64);
     for (Piece piece in listPieces)
       {
+        if ((piece.position - 1 == position) && (piece.name == 'Пешка гулящая') && (piece.color != color))
+        {
+          keys.add(piece.position + 8 * coefficient);
+        }
+        if ((piece.position + 1 == position) && (piece.name == 'Пешка гулящая'))
+        {
+          keys.add(piece.position + 8 * coefficient);
+        }
         if ((piece.position == position + 7 * coefficient) && ((color != Colors.white) || (position != 8) && ((color != Colors.black) || (position != 57))))
         {
           if (piece.color != color)

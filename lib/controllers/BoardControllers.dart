@@ -31,7 +31,7 @@ class Board
       if (colors1[key - 1] == Colors.red)
       {
         childImages[nowPiece.position - 1] = positions.nullImage();
-        positions.newPosition(nowPiece, key);
+        positions.newPosition(nowPiece, key, childImages);
         childImages[key - 1] = positions.isPosition(key);
       }
       for (int key = 1; key < 65; key++)
