@@ -53,19 +53,21 @@ class Position
   }
   void newPosition(Piece piece, int key, List childImages)
   {
-    Piece newQueen = Queen('null', 555, Colors.white);
-    Piece pieceDelForNewQueen = King('null', 555, Colors.white);
-    Piece pieceForDel = King('null', 555, Colors.white);
+    ///Все эти три переменны создал для  добавления/удаления из списка. Во время перебора массива через цикл for нельзя изменять список, поэтому приглось записывать инфу в новые объекты
+    Piece newQueen = Queen('null', 555, Colors.white); ///Объект, в случае подходящего условия в который запишется новообращённый ферзь
+    Piece pieceDelForNewQueen = King('null', 555, Colors.white); ///Объект в который запишется пешка, которая должна превратиться в ферзя,
+    ///потом с помощью этого объекта пешка удалитя и вместо неё в список всех фигур добавится дамка "newQueen"
+    Piece pieceForDel = King('null', 555, Colors.white);///Объект в который запишется срубленная фигура, с помощью этого объекта произвидётся удаление из списка
 
-    if ((piece.name == 'Пешка') && ((piece.position < 8) || (piece.position > 57)))
+    if ((piece.name == 'Пешка') && ((piece.position < 8) || (piece.position > 57))) ///Условие на проверку того, прошла ли пешка до конца противоположной стороны, чтобы стать дамкой
     {
       pieceDelForNewQueen = piece;
       newQueen = Queen('Ферзь', piece.position, piece.color);
     }
-    pieces.removeWhere((element) => element == pieceDelForNewQueen);
+    pieces.removeWhere((element) => element == pieceDelForNewQueen);///удаление пешки которая дошла до противоположной стороны, чтобы стать дамкой
     if (newQueen.position != 555)
     {
-      pieces.add(newQueen);
+      pieces.add(newQueen);///добавление новой дамки в случае прохождения условия
     }
 
     for (Piece element in pieces)
@@ -81,26 +83,27 @@ class Position
                 element.name = 'Пешка';
               }
           }
-        if (element.position == key)
+        if (element.position == key)///проверка, если на клетку, на которую наступает фигура, занята, то добавлением в объект для удаления фигуру которая изначально стояла на этом месте
           {
             pieceForDel = element;
           }
 
       }
+    ///Гулящая пешка = пешка которая сходила на две клетки вперёд. И вполне понятно, это происходит для того, чтобы пешка могла сделать захват(P.S. так называется трюк пешки который ты Лёъа говорил доавить)
     if (piece.name == 'Пешка гулящая')
     {
       piece.name = 'Пешка';
     }
-    if ((piece.name == 'Пешка') && (((piece.position) - key).abs() == 16))
+    if ((piece.name == 'Пешка') && (((piece.position) - key).abs() == 16))///в случае подходящих условий пешка перестаёт быть гулящей
     {
       piece.name = 'Пешка гулящая';
     }
-    if (pieceForDel.name == 'Пешка гулящая')
+    if (pieceForDel.name == 'Пешка гулящая')///удаление изображения гулящей пешки в случае если её срубили
     {
       childImages[pieceForDel.position - 1] = nullImage();
     }
-    piece.position = key;
-    pieces.removeWhere((element) => element == pieceForDel);
+    piece.position = key;///переход активной пешки на нажатую область
+    pieces.removeWhere((element) => element == pieceForDel);///удаление фигуры которуб срубили
 
   }
   SvgPicture nullImage(){
