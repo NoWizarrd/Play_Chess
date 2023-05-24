@@ -39,19 +39,22 @@ class Board {
       nowPiece = King('null', 555,
           Colors.white); // Выбор короля фигуры, которая сейчас выбрана
     } else {
-      for (int key in positions.ruleFigure(key)) {
-        // Подсветка доступных ходов
-        if (positions.whatPiece(key).name != 'null') {
-          // Проверяем, является ли позиция позицией фигуры противника
-          colors1[key - 1] = Color.fromRGBO(235, 9, 9, 0.6); // Красный цвет для срубления фигуры противника
-        } else {
-          colors1[key - 1] = Color.fromRGBO(
-              80, 250, 148, 0.6); // Зеленый цвет для доступного хода
+    if (nowPiece != positions.whatPiece(key)) {
+      if (positions.whatPiece(key).color == positions.turnColor)
+      {
+        for (int key in positions.ruleFigure(key)) {
+          // Подсветка доступных ходов
+          if (positions.whatPiece(key).name != 'null') {
+            // Проверяем, является ли позиция позицией фигуры противника
+            colors1[key - 1] = Color.fromRGBO(235, 9, 9, 0.6); // Красный цвет для срубления фигуры противника
+          } else {
+            colors1[key - 1] = Color.fromRGBO(
+                80, 250, 148, 0.6); // Зеленый цвет для доступного хода
+          }
         }
-      }
-      if (nowPiece != positions.whatPiece(key)) {
         nowPiece = positions.whatPiece(key);
         colors1[nowPiece.position - 1] = Color.fromRGBO(64, 168, 106, 0.9);
+      }
       }
     }
   }

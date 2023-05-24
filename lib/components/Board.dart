@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:play_chess/components/EndGame.dart';
 import 'package:play_chess/controllers/BoardControllers.dart';
 
 
@@ -11,6 +12,7 @@ class BoardView extends StatefulWidget {
 }
 
 class _BoardViewState extends State<BoardView> {
+
   @override
   void initState() {
     super.initState();

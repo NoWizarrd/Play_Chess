@@ -50,21 +50,20 @@ class King extends Piece{
     }
 
     List possibleMoves = rule(listPieces);
-
     for (int move in possibleMoves) {
       List<Piece> temporaryPieces = List<Piece>.from(listPieces);
       int currentPosition = position;
 
       // Перемещаем короля на пробный ход
-      temporaryPieces.remove(this);
-      temporaryPieces.add(King(name, move, color));
+      King tempKing = King(name, move, color);
+      int kingIndex = temporaryPieces.indexOf(this);
+      temporaryPieces[kingIndex] = tempKing;
 
       // Проверяем, атакуется ли король на пробном ходу
-      if (!isAttacked(temporaryPieces)) {
+      if (!tempKing.isAttacked(temporaryPieces)) {
         return false;
       }
     }
-
     return true;
   }
 
@@ -72,7 +71,11 @@ class King extends Piece{
     if (isAttacked(listPieces)) {
       return false;
     }
-
+    for (Piece pi in listPieces){
+      if(pi.color == color && pi.name != 'Король'){
+        return false;
+      }
+    }
     List possibleMoves = rule(listPieces);
 
     for (int move in possibleMoves) {

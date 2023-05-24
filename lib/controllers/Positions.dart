@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:play_chess/models/piece/Pieces.dart';
 
+import '../components/EndGame.dart';
+
 class Position
 {
+
+
+  Color turnColor = Colors.white;
   List <Piece> pieces = [Rook('Ладья', 8, Colors.black), Knight('Конь', 7, Colors.black),Bishop('Слон', 6, Colors.black),
     King('Король', 5, Colors.black), Queen('Ферзь', 4, Colors.black),Knight('Конь', 2, Colors.black),
     Bishop('Слон', 3, Colors.black), Rook('Ладья', 1, Colors.black), Pawn('Пешка', 9, Colors.black),
@@ -136,7 +141,14 @@ class Position
         }
       }
     }
-
+    if (turnColor == Colors.white)
+    {
+      turnColor = Colors.black;
+    }
+    else
+    {
+      turnColor = Colors.white;
+    }
   }
   SvgPicture nullImage(){
     return SvgPicture.asset(
