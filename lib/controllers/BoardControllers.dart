@@ -6,7 +6,7 @@ class Board
 {
   int buttonKey = 0;
   Position positions = Position();
-  Piece nowPiece = King('null', 555, Colors.white);
+  Piece nowPiece = King('null', 555, Colors.orange);
   List<Color> colors1 = [];
   List colors2 = [];
   List childImages = [];
@@ -38,17 +38,20 @@ class Board
       {
         colors1[key-1] = colors2[key-1];
       }
-      nowPiece = King('null', 555, Colors.white);
+      nowPiece = King('null', 555, Colors.orange);
     }
     else
     {
-      for (int key in positions.ruleFigure(key))
-      {
-        colors1[key-1] = Colors.red;
-      }
       if (nowPiece != positions.whatPiece(key)) {
-        nowPiece = positions.whatPiece(key);
-        colors1[nowPiece.position - 1] = Colors.blue;
+        if (positions.whatPiece(key).color == positions.turnColor)
+          {
+            for (int key in positions.ruleFigure(key))
+            {
+              colors1[key-1] = Colors.red;
+            }
+            nowPiece = positions.whatPiece(key);
+            colors1[nowPiece.position - 1] = Colors.blue;
+          }
       }
     }
   }

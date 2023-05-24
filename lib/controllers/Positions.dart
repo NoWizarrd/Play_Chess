@@ -4,6 +4,7 @@ import 'package:play_chess/models/piece/Pieces.dart';
 
 class Position
 {
+  Color turnColor = Colors.white;
   List <Piece> pieces = [Rook('Ладья', 8, Colors.black), Knight('Конь', 7, Colors.black),Bishop('Слон', 6, Colors.black),
     King('Король', 5, Colors.black), Queen('Ферзь', 4, Colors.black),Knight('Конь', 2, Colors.black),
     Bishop('Слон', 3, Colors.black), Rook('Ладья', 1, Colors.black), Pawn('Пешка', 9, Colors.black),
@@ -27,7 +28,7 @@ class Position
   }
   Piece whatPiece(int key)
   {
-    Piece piece = King('null', 555, Colors.white);
+    Piece piece = King('null', 555, Colors.orange);
     for (Piece element in pieces) {
       if (key == element.position){
         piece = element;
@@ -104,7 +105,14 @@ class Position
     }
     piece.position = key;///переход активной пешки на нажатую область
     pieces.removeWhere((element) => element == pieceForDel);///удаление фигуры которуб срубили
-
+    if (turnColor == Colors.white)
+      {
+        turnColor = Colors.black;
+      }
+    else
+      {
+        turnColor = Colors.white;
+      }
   }
   SvgPicture nullImage(){
     return SvgPicture.asset(
