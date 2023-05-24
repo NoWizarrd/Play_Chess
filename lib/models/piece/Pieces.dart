@@ -22,6 +22,78 @@ class King extends Piece{
   King(this.name, this.position, this.color);
   @override
 
+  bool isAttacked(List<Piece> listPieces) {
+    for (Piece piece in listPieces) {
+      if (piece is King) continue; // Пропускаем короля
+      if (piece.color == color) continue; // Пропускаем фигуры своего цвета
+
+      List attackingMoves = piece.rule(listPieces);
+      if (attackingMoves.contains(position)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  bool isPieceAttacked(List<Piece> listPieces, int piecePosition) {
+    for (Piece piece in listPieces) {
+      if (piece.color != color && piece.rule(listPieces).contains(piecePosition)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  bool isCheckmate(List<Piece> listPieces) {
+    if (!isAttacked(listPieces)) {
+      return false;
+    }
+
+    List possibleMoves = rule(listPieces);
+
+    for (int move in possibleMoves) {
+      List<Piece> temporaryPieces = List<Piece>.from(listPieces);
+      int currentPosition = position;
+
+      // Перемещаем короля на пробный ход
+      temporaryPieces.remove(this);
+      temporaryPieces.add(King(name, move, color));
+
+      // Проверяем, атакуется ли король на пробном ходу
+      if (!isAttacked(temporaryPieces)) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  bool isStalemate(List<Piece> listPieces) {
+    if (isAttacked(listPieces)) {
+      return false;
+    }
+
+    List possibleMoves = rule(listPieces);
+
+    for (int move in possibleMoves) {
+      List<Piece> temporaryPieces = List<Piece>.from(listPieces);
+      int currentPosition = position;
+
+      // Перемещаем короля на пробный ход
+      temporaryPieces.remove(this);
+      temporaryPieces.add(King(name, move, color));
+
+      // Проверяем, атакуется ли король на пробном ходу
+      if (!isAttacked(temporaryPieces)) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+
+
   List rule(List listPieces) {
     List keys = [];
     List temporaryKeys = [];
@@ -71,7 +143,20 @@ class King extends Piece{
     {
       keys.remove(key);
     }
-    return keys;
+
+    List safeMoves = [];
+    for (int move in keys) {
+      King tempKing = King(name, move, color);
+      List<Piece> tempList = List<Piece>.from(listPieces);
+      int kingIndex = tempList.indexOf(this);
+      tempList[kingIndex] = tempKing;
+
+      if (!tempKing.isAttacked(tempList)) {
+        safeMoves.add(move);
+      }
+    }
+    return safeMoves; // ограничение хода работает со всеми вариантами, кроме коня
+    // return keys;
   }
 }
 

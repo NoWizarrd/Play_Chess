@@ -114,6 +114,29 @@ class Position
     piece.position = key;///переход активной пешки на нажатую область
     pieces.removeWhere((element) => element == pieceForDel);///удаление фигуры которуб срубили
 
+    ///
+    for (Piece piece in pieces) {
+      if (piece is King) {
+// Проверяем, атакуется ли король
+        bool isKingAttacked = piece.isAttacked(pieces);
+        if (isKingAttacked) {
+          print('Король под шахом');
+        }
+
+// Проверяем, находится ли король под шахом матом
+        bool isCheckmate = piece.isCheckmate(pieces);
+        if (isCheckmate) {
+          print('Мат королю');
+        }
+
+// Проверяем, находится ли король в пате
+        bool isStalemate = piece.isStalemate(pieces);
+        if (isStalemate) {
+          print('Король в пате');
+        }
+      }
+    }
+
   }
   SvgPicture nullImage(){
     return SvgPicture.asset(
