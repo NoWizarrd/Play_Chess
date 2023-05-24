@@ -74,7 +74,7 @@ class Position
       {
         if (element.name == 'Пешка гулящая')
           {
-            if (((element.position == key - 8) && (element.color == Colors.white)) || ((element.position == key + 8) && (element.color == Colors.black)))
+            if ((piece.name == 'Пешка') && (((element.position == key - 8) && (element.color == Colors.white)) || ((element.position == key + 8) && (element.color == Colors.black))))
               {
                 pieceForDel = element;
               }
