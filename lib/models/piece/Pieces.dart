@@ -667,14 +667,14 @@ class Pawn extends Piece
         {
           keys.add(piece.position + 8 * coefficient);
         }
-        if ((piece.position == position + 7 * coefficient) && ((color != Colors.white) || (position != 8) && ((color != Colors.black) || (position != 57))))
+        if ((position % 8 != 0) && ((position - 1) % 8 != 0) && (piece.position == position + 7 * coefficient) && ((color != Colors.white) || (position != 8) && ((color != Colors.black) || (position != 57))))
         {
           if (piece.color != color)
           {
             keys.add(piece.position);
           }
         }
-        if ((piece.position == position + 9 * coefficient) && ((color != Colors.white) || (position != 17) && ((color != Colors.black) || (position != 58))))
+        if ((position % 8 != 0) && ((position - 1) % 8 != 0) && ((piece.position == position + 9 * coefficient) && ((color != Colors.white) || (position != 17) && ((color != Colors.black) || (position != 58)))))
         {
           if (piece.color != color)
           {
