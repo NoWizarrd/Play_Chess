@@ -13,7 +13,8 @@ class ChessPiece extends StatelessWidget {
     final _color;
     isWhite == true ? _color =  Colors.white : _color = Colors.black;
     return SvgPicture.asset(
-      'images/$assetName', // путь к файлу с изображением фигуры
+      'images/$assetName',
+      color: Colors.white,// путь к файлу с изображением фигуры
       height: 40, // задаем размер фигуры
       width: 40,
     );

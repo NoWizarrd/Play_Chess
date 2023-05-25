@@ -61,9 +61,9 @@ class _StartPageState extends State<StartPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(right: screenWidth/100)),
                           SvgPicture.asset(
-                            'images/ФерзьЧ.svg',
+                            'images/Ферзь.svg',
                             height: 100,
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                           ),
                           SizedBox(
                             //width: 200,
@@ -120,9 +120,9 @@ class _StartPageState extends State<StartPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(right: screenWidth/100)),
                           SvgPicture.asset(
-                            'images/КорольЧ.svg',
+                            'images/Король.svg',
                             height: 100,
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                           ),
                           SizedBox(
                             //width: 200,
@@ -186,9 +186,9 @@ class _StartPageState extends State<StartPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(right: screenWidth/100)),
                           SvgPicture.asset(
-                            'images/КоньЧ.svg',
+                            'images/Конь.svg',
                             height: 100,
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                           ),
                           SizedBox(
                             //width: 200,
@@ -249,9 +249,9 @@ class _StartPageState extends State<StartPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(right: screenWidth/100)),
                           SvgPicture.asset(
-                            'images/ЛадьяЧ.svg',
+                            'images/Ладья.svg',
                             height: 100,
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                           ),
                           SizedBox(
                             //width: 200,
@@ -322,9 +322,9 @@ class _StartPageState extends State<StartPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(right: screenWidth/100)),
                           SvgPicture.asset(
-                            'images/СлонЧ.svg',
+                            'images/Слон.svg',
                             height: 100,
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                           ),
                           SizedBox(
                             //width: 200,
